@@ -1,5 +1,6 @@
 package org.stone.study.core;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
 public class TestConcException {
 
     public static void main(String[] args) {
+        /*
         Map<String, Integer> map = new HashMap<>();
         map.put("1", 1);
         map.put("2", 2);
@@ -27,5 +29,19 @@ public class TestConcException {
         }
 
         System.out.println(map);
+         */
+
+        ArrayList<String> collection = new ArrayList<String>();
+        collection.add("Apple");
+        collection.add("Banana");
+        collection.add("Cherry");
+        for (String element : collection) {
+            if (element.equals("Banana")) {
+                collection.remove(1);
+//                collection.add("test");
+                collection.add("test");
+            }
+        }
+        System.out.println(collection);
     }
 }
