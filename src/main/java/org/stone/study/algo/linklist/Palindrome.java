@@ -11,7 +11,9 @@ public class Palindrome {
     private static ListNode left = null;
 
     public static void main(String[] args) {
-        ListNode head = init(new int[]{1, 2, 3, 2, 2});
+//        ListNode head = init(new int[]{1, 2, 3, 2, 1});
+        ListNode head = init(new int[]{1, 2, 2, 1});
+//        ListNode head = init(new int[]{1,2});
 
         System.out.println("isPalindrome:" + isPalindrome(head));
         System.out.println("isPalindrome:" + isPalindrome2(head));
@@ -28,9 +30,6 @@ public class Palindrome {
         while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-        }
-        if(fast == null) {
-            slow = slow.next; // odd num of nodes need to advance one step for finding the second half
         }
 
         // reverse the second half
