@@ -1,4 +1,4 @@
-package org.stone.study.core;
+package org.stone.study.algo.hw;
 
 
 import java.io.BufferedReader;
@@ -21,7 +21,7 @@ import java.util.StringTokenizer;
  * 2,2
  * 10,20
  * 30,40
- * 
+ *
  * 输出：
  * 70
  *
@@ -46,9 +46,9 @@ import java.util.StringTokenizer;
  * 60
  */
 public class MinGas4Car {
-    static int m;
-    static int n;
-    static int[][] matrix;
+    private static int m;
+    private static int n;
+    private static int[][] matrix;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -62,6 +62,7 @@ public class MinGas4Car {
                 matrix[i][j] = Integer.parseInt(st.nextToken());
             }
         }
+
         System.out.println(bfs());
     }
 
@@ -70,11 +71,11 @@ public class MinGas4Car {
 
     // 记录路径中位置的几个状态
     static class Node {
-        int x; // 位置横坐标
-        int y; // 位置纵坐标
-        int init; // 到达此位置所需的最少初始油量
-        int remain; // 到达此位置时剩余可用油量
-        boolean flag; // 到达此位置前有没有加过油
+        private int x; // 位置横坐标
+        private int y; // 位置纵坐标
+        private int init; // 到达此位置所需的最少初始油量
+        private int remain; // 到达此位置时剩余可用油量
+        private boolean flag; // 到达此位置前有没有加过油
 
         public Node(int x, int y) {
             this.x = x;
@@ -119,7 +120,7 @@ public class MinGas4Car {
         dist_init[0][0] = src.init;
         dist_remain[0][0] = src.remain;
         // 广搜
-        while (queue.size() > 0) {
+        while (!queue.isEmpty()) {
             Node cur = queue.remove(0);
             // 从当前位置cur开始向上下左右四个方向探路
             for (int[] offset : offsets) {

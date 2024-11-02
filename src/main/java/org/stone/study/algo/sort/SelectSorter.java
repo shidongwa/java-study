@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * @author yovn
+ *
+ * 选择排序，非稳定排序
  */
 public class SelectSorter {
 

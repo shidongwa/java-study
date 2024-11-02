@@ -3,7 +3,7 @@ package org.stone.study.algo.sort;
 import java.util.Arrays;
 
 /**
- * 快速排序
+ * 快速排序，非稳定排序
  */
 public class QuickSort {
 	public static void sort(int[] datas, int low, int high) {
@@ -19,21 +19,23 @@ public class QuickSort {
 					j--; 
 				}// end while 
 				
-				if (i < j) { 
+				if (i < j) {
 					// 比枢纽元素小的移动到左边 
 					datas[i] = datas[j];
-					i++; 
-				}// end if 
+					i++;
+				}// end if
 				
 				while (i < j && datas[i] < pivotKey) {
 					i++; 
 				}// end while 
 				
 				if (i < j) { 
-					// 比枢纽元素大的移动到右边 
+					// 比枢纽元素大的移动到右边
 					datas[j] = datas[i];
-					j--; 
-				}// end if 
+					j--;
+				}// end if
+
+				System.out.println("i:" + i + ", j:"  + j  + ", pivot:" + pivotKey + ", arr:" + Arrays.toString(datas));
 			}// end while 
 			
 			// 枢纽元素移动到正确位置 
